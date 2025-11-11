@@ -14,7 +14,7 @@ max=${score[0]}
 for (( i=1; i<5; i++ ))
 do
     read -rp "Score $((i+1)): " num
-    score[$i]=$num
+    score[i]=$num
     greater=$(echo "${score[$i]} > $max" | bc)
     if (( greater == 1 )); then
         max=${score[$i]}
