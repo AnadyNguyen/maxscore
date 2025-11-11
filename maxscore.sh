@@ -3,7 +3,7 @@
 #Andy Nguyen   
 #CPSC298 
 
-score=()
+declare -a score
 
 echo "Enter 5 scores:"
 read -rp "Score 1: " num
