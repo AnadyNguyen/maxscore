@@ -1,13 +1,13 @@
 # README for Username Validation Script
 
 ## Author Information
-- **Name:** [Your Full Name]
-- **Course:** [Course Number and Name]
+- **Name:** Andy Nguyen
+- **Course:** CPSC298
 - **Assignment:** Maxscore Assignment
-- **Date:** [Date of Completion]
+- **Date:** 11/10
 
 ## Program Description
-[Write 2-3 sentences in your own words describing what this script does and its purpose. Explain the problem it solves and how it works at a high level.]
+This program takes 5 scores and compares them all, taking the maxscore out of them and calculating the difference between each score in order.
 
 ## Usage
 To run the script interactively:
@@ -21,21 +21,17 @@ To test with the provided input file:
 ```
 
 ## How the Script Works
-[Explain in 3-5 sentences how your script works. Include information about:]
-- How you read and store numbers in an array
-- How you loop through the array to find the maximum value
-- How you calculate and display the difference between each score and the highest
+The script first prompts the user to enter 5 positive integers, reading each one with `read` and storing them in an array called `score`. It sets the first entered number as the initial maximum, then uses a `for` loop to go through the remaining scores and update the maximum if a larger value is found. After finding the highest score, another loop goes through each element in the array, calculates the difference between that score and the maximum, and prints both the score and its difference from the highest.
+
 
 ## Testing Results
-[Describe your testing process and results. Include:]
-- Example successful inputs and results
-- How you used the maxscore-input file to test
+Empty inputs, floats and strings caused an error, while all integers were fine.
 
 ## Challenges and Solutions
-[Optional: Describe any challenges you encountered while creating this script and how you solved them. This could include debugging issues, arrays, or Git workflow problems.]
+Figuring out why floats and integers don't work.
 
 ## Resources
-[List any resources you used (class slides, ChatGPT, etc.). Please refer to the course syllabus for more details on citations.]
+ChatGPT, Class slides, google, stack overflow, YouTube
 
 ## License
 This project is part of coursework for Chapman University and is intended for educational purposes.
