@@ -3,34 +3,29 @@
 #Andy Nguyen   
 #CPSC298 
 
-
 score=()
-max=0
 
 echo "Enter 5 scores:"
-
-# Read first score and set as max (just like score[0] = keyboard.nextDouble(); max = score[0];)
 read -rp "Score 1: " num
 score[0]=$num
 max=${score[0]}
 
-# Read remaining 4 scores and find max
-for (( index=1; index<5; index++ ))
+# Find max using bc
+for (( i=1; i<5; i++ ))
 do
-    read -rp "Score $((index+1)): " num
-    score[$index]=$num
-    if (( ${score[$index]} > max )); then
-        max=${score[$index]}
+    read -rp "Score $((i+1)): " num
+    score[$i]=$num
+    greater=$(echo "${score[$i]} > $max" | bc)
+    if (( greater == 1 )); then
+        max=${score[$i]}
     fi
 done
 
 echo ""
 echo "The highest score is $max"
 echo "The scores are:"
-
-# Print all scores and their difference from max
-for (( index=0; index<5; index++ ))
+for (( i=0; i<5; i++ ))
 do
-    diff=$(( max - ${score[$index]} ))
-    echo "${score[$index]} differs from max by $diff"
+    diff=$(echo "$max - ${score[$i]}" | bc)
+    echo "${score[$i]} differs from max by $diff"
 done
